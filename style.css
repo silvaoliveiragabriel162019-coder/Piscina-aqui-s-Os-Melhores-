@@ -1,0 +1,117 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+  margin: 0;
+  padding: 0;
+}
+header {
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+nav button {
+  margin: 5px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background: #007bff;
+  color: white;
+}
+.sec {
+  background: white;
+  margin: 15px;
+  padding: 20px;
+  border-radius: 10px;
+}
+input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 5px;
+  background: #007bff;
+  color: white;
+  border: none;
+}
+ul li {
+  background: #e6e6e6;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 5px;
+}
+.capa {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px; /* opcional */
+}
+/* Fundo geral inspirado no pôr do sol com reflexo de piscina */
+body {
+  background: linear-gradient(135deg, #0aaee8, #006c9c, #ffb46b);
+  background-attachment: fixed;
+  font-family: "Poppins", sans-serif;
+  color: #ffffff;
+  padding-bottom: 40px; 
+}
+
+/* Seções com vidro fosco (estilo resort premium) */
+.sec {
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  border-radius: 16px;
+  padding: 20px;
+  margin: 18px;
+}
+
+/* Inputs com borda amadeirada suave */
+input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 2px solid #d9c2a3; /* tom madeira clara */
+  background: rgba(255, 255, 255, 0.8);
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+/* Botões com luz decorativa quente */
+button {
+  background: linear-gradient(135deg, #ffdd9b, #ffb85c);
+  color: #333;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 8px;
+  box-shadow: 0 3px 10px rgba(255, 190, 120, 0.6);
+  transition: 0.2s;
+}
+
+button:hover {
+  filter: brightness(1.1);
+}
+
+/* Lista de pagamentos e gastos com estilo madeira */
+li {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 6px;
+  border-left: 4px solid #d9c2a3;
+}
+
+/* Títulos com destaque branco quente */
+h1, h2, h3 {
+  color: #fffdf7;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}

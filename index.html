@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Domingão dos Brabos - A Resenha é Suprema</title>
+<link rel="stylesheet" href="style.css">
+<script defer src="script.js"></script>
+</head>
+<body>
+  <img src="capa.png" alt="Imagem de capa" class="capa">
+<header>
+  <h1>Domingão dos Brabos</h1>
+  <p>Aqui a Resenha é Suprema</p>
+  <nav>
+    <button onclick="showSection('presenca')">Confirmar Presença</button>
+    <button onclick="showSection('pix')">Pagamento</button>
+    <button onclick="showSection('org')">Organizadores</button>
+    <button onclick="showSection('financeiro')">Financeiro</button>
+  </nav>
+</header>
+
+<section id="presenca" class="sec">
+  <h2>✅ Confirmar presença</h2>
+  <p>Valor: <b>R$ 60,00</b> por pessoa (pode pagar metade até 04/12 e o restante até 02/01)</p>
+  <input id="nome" placeholder="Seu nome">
+  <button onclick="confirmarPresenca()">Confirmar</button>
+</section>
+
+<section id="pix" class="sec" style="display:none;">
+  <h2>💰 Pagamento via PIX</h2>
+  <p><b>Chave PIX (email):</b><br> silvaoliveiragabriel162019@gmail.com</p>
+</section>
+
+<section id="org" class="sec" style="display:none;">
+  <h2>🛒 Área dos Organizadores</h2>
+  <p>Apenas organizadores podem adicionar compras.</p>
+  <input id="senha" placeholder="Digite a senha" type="password">
+  <button onclick="entrarOrg()">Entrar</button>
+
+  <div id="orgArea" style="display:none; margin-top:20px;">
+    <h3>Adicionar gasto</h3>
+    <input id="gastoDesc" placeholder="Descrição">
+    <input id="gastoValor" placeholder="Valor" type="number">
+    <button onclick="addGasto()">Adicionar</button>
+
+    <h3 style="margin-top:20px;">Adicionar pagamento</h3>
+    <input id="pagNome" placeholder="Nome">
+    <input id="pagValor" placeholder="Valor pago" type="number">
+    <button onclick="addPagamento()">Adicionar</button>
+  </div>
+</section>
+
+<section id="financeiro" class="sec" style="display:none;">
+  <h2>📊 Controle Financeiro</h2>
+  <p><b>Total esperado:</b> 15 pessoas × R$60 = <b>R$900,00</b></p>
+
+  <p><b>Total arrecadado:</b> R$ <span id="totArrec">0</span></p>
+  <p><b>Total gasto:</b> R$ <span id="totGasto">0</span></p>
+  <p><b>Saldo final:</b> R$ <span id="saldo">0</span></p>
+
+  <h3>Pagamentos</h3>
+  <ul id="listaPag"></ul>
+
+  <h3>Gastos</h3>
+  <ul id="listaGasto"></ul>
+</section>
+
+</body>
+</html>
