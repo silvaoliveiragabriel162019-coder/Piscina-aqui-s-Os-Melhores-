@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Domingão dos Brabos - A Resenha é Suprema</title>
+<link rel="stylesheet" href="style.css">
+<script defer src="script.js"></script>
+</head>
+
+<body>
+
+<!-- ===== CAROUSEL ===== -->
+<div id="carrossel">
+    <div class="carrossel-container">
+        <img src="capa.png" alt="">
+        <img src="foto2.jpg" alt="">
+        <img src="foto3.jpg" alt="">
+        <img src="foto4.jpg" alt="">
+        <img src="foto5.jpg" alt="">
+        <img src="foto1.jpg" alt="">
+    </div>
+</div>
+
+<header>
+  <h1>Domingão dos Brabos</h1>
+  <p>Aqui a Resenha é Suprema</p>
+  <nav>
+    <button onclick="showSection('presenca')">Confirmar Presença</button>
+    <button onclick="showSection('pix')">Pagamento</button>
+    <button onclick="showSection('org')">Organizadores</button>
+    <button onclick="showSection('financeiro')">Financeiro</button>
+  </nav>
+</header>
+
+<section id="presenca" class="sec">
+  <h2>✅ Confirmar presença</h2>
+  <p>Valor: <b>R$ 60,00</b> por pessoa (pode pagar metade até 04/12 e o restante até 02/01)</p>
+  <input id="nome" placeholder="Seu nome">
+  <button onclick="confirmarPresenca()">Confirmar</button>
+</section>
+
+<section id="pix" class="sec" style="display:none;">
+  <h2>💰 Pagamento via PIX</h2>
+
+  <!-- QR Code PIX -->
+  <img src="qrcode.jpg" class="qr-img" alt="QR Code PIX">
+
+<p style="text-align:center; margin-top:10px; font-size:16px;">
+  Chave PIX: <b>silvaoliveiragabriel162019@gmail.com</b>
+</p>
+
+  <!-- Copiar código PIX -->
+  <p style="text-align:center; font-size:18px; margin-top:10px;">
+    <b>Valor: R$ 17,50 ou R$60</b>
+  </p>
+
+  <button 
+    onclick="copiarPix()"
+    style="display:block; margin:10px auto; padding:10px 20px; font-size:16px;">
+    📋 Copiar código PIX
+  </button>
+
+  <script>
+    function copiarPix() {
+      const codigo = "00020126580014BR.GOV.BCB.PIX0136silvaoliveiragabriel162019@gmail.com520400005303986540517.505802BR5922Gabriel Silva Oliveira6009SAO PAULO62140510OVQJOLKNyY63043C3E";
+      navigator.clipboard.writeText(codigo).then(() => {
+        alert("✅ Código PIX copiado!");
+      });
+    }
+  </script>
+</section>
+
+<section id="org" class="sec" style="display:none;">
+  <h2>🛒 Área dos Organizadores</h2>
+  <p>Apenas organizadores podem adicionar compras.</p>
+  <input id="senha" placeholder="Digite a senha" type="password">
+  <button onclick="entrarOrg()">Entrar</button>
+
+  <div id="orgArea" style="display:none; margin-top:20px;">
+    <h3>Adicionar gasto</h3>
+    <input id="gastoDesc" placeholder="Descrição">
+    <input id="gastoValor" placeholder="Valor" type="number">
+    <button onclick="addGasto()">Adicionar</button>
+
+    <h3 style="margin-top:20px;">Adicionar pagamento</h3>
+    <input id="pagNome" placeholder="Nome">
+    <input id="pagValor" placeholder="Valor pago" type="number">
+    <button onclick="addPagamento()">Adicionar</button>
+  </div>
+</section>
+
+<section id="financeiro" class="sec" style="display:none;">
+  <h2>📊 Controle Financeiro</h2>
+  <p><b>Total esperado:</b> 15 pessoas × R$60 = <b>R$900,00</b></p>
+
+  <p><b>Total arrecadado:</b> R$ <span id="totArrec">0</span></p>
+  <p><b>Total gasto:</b> R$ <span id="totGasto">0</span></p>
+  <p><b>Saldo final:</b> R$ <span id="saldo">0</span></p>
+
+  <h3>Pagamentos</h3>
+  <ul id="listaPag"></ul>
+
+  <h3>Gastos</h3>
+  <ul id="listaGasto"></ul>
+</section>
+
+</body>
+</html>
