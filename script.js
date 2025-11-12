@@ -68,7 +68,7 @@ function iniciarCarrossel() {
 document.addEventListener("DOMContentLoaded", iniciarCarrossel);
 
 function copiarPix() {
-  const codigo = "00020126580014BR.GOV.BCB.PIX0136silvaoliveiragabriel162019@gmail.com520400005303986540517.505802BR5922Gabriel Silva Oliveira6009SAO PAULO62140510OVQJOLKNyY63043C3E";
+  const codigo = "00020126580014BR.GOV.BCB.PIX0136silvaoliveiragabriel162019@gmail.com5204000053039865802BR5922Gabriel Silva Oliveira6009SAO PAULO62140510AaqySgIiR963040DA5";
   navigator.clipboard.writeText(codigo).then(() => {
     alert("✅ Código PIX copiado!");
   });
