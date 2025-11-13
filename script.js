@@ -5,21 +5,29 @@ function showSection(sec) {
 }
 
 // ===== CONFIRMAR PRESENÇA =====
+let confirmados = JSON.parse(localStorage.getItem("confirmados")) || [];
+
 function confirmarPresenca() {
   let nome = document.getElementById('nome').value;
   if (!nome) return alert('Digite seu nome');
+  confirmados.push(nome);
+  localStorage.setItem("confirmados", JSON.stringify(confirmados));
   alert('Presença confirmada: ' + nome);
+  document.getElementById('nome').value = '';
 }
+
 
 // ===== LOGIN ORGANIZADORES =====
 function entrarOrg() {
   let senha = document.getElementById('senha').value;
   if (senha === '0401') {
     document.getElementById('orgArea').style.display = 'block';
+    mostrarConfirmados();
   } else {
     alert('Senha incorreta');
   }
 }
+
 
 // ===== FINANCEIRO =====
 let totalArrecadado = 0;
@@ -73,3 +81,17 @@ function copiarPix() {
     alert("✅ Código PIX copiado!");
   });
 }
+
+function mostrarConfirmados() {
+  let lista = document.getElementById('listaConfirmados');
+  lista.innerHTML = '';
+
+  if (confirmados.length === 0) {
+    lista.innerHTML = '<li>Nenhuma presença confirmada ainda.</li>';
+  } else {
+    confirmados.forEach(nome => {
+      lista.innerHTML += `<li>${nome}</li>`;
+    });
+  }
+}
+
