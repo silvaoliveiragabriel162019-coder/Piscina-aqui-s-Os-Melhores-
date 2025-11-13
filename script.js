@@ -14,7 +14,7 @@ function confirmarPresenca() {
 // ===== LOGIN ORGANIZADORES =====
 function entrarOrg() {
   let senha = document.getElementById('senha').value;
-  if (senha === 'Os Melhores') {
+  if (senha === '0401') {
     document.getElementById('orgArea').style.display = 'block';
   } else {
     alert('Senha incorreta');
