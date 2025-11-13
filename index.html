@@ -74,26 +74,45 @@
 <section id="org" class="sec" style="display:none;">
   <h2>🛒 Área dos Organizadores</h2>
   <p>Apenas organizadores podem adicionar compras.</p>
+
   <input id="senha" placeholder="Digite a senha" type="password">
   <button onclick="entrarOrg()">Entrar</button>
 
- <div id="orgArea" style="display:none; margin-top:20px;">
-  <h3>👥 Lista de Confirmados</h3>
-  <ul id="listaConfirmados"></ul>
-</div>
-
   <div id="orgArea" style="display:none; margin-top:20px;">
-    <h3>Adicionar gasto</h3>
+    <!-- Lista de Confirmados -->
+    <h3>👥 Lista de Confirmados</h3>
+    <ul id="listaConfirmados"></ul>
+
+    <hr>
+
+    <!-- Controle Financeiro -->
+    <h3>💸 Controle Financeiro</h3>
+    <p><b>Total Arrecadado:</b> R$<span id="totArrec">0</span></p>
+    <p><b>Total Gasto:</b> R$<span id="totGasto">0</span></p>
+    <p><b>Saldo:</b> R$<span id="saldo">0</span></p>
+
+    <hr>
+
+    <!-- Adicionar Pagamento -->
+    <h4>Adicionar Pagamento</h4>
+    <input id="pagNome" placeholder="Nome de quem pagou">
+    <input id="pagValor" type="number" placeholder="Valor">
+    <button onclick="addPagamento()">Adicionar</button>
+
+    <ul id="listaPag"></ul>
+
+    <hr>
+
+    <!-- Adicionar Gasto -->
+    <h4>Adicionar Gasto</h4>
     <input id="gastoDesc" placeholder="Descrição">
-    <input id="gastoValor" placeholder="Valor" type="number">
+    <input id="gastoValor" type="number" placeholder="Valor">
     <button onclick="addGasto()">Adicionar</button>
 
-    <h3 style="margin-top:20px;">Adicionar pagamento</h3>
-    <input id="pagNome" placeholder="Nome">
-    <input id="pagValor" placeholder="Valor pago" type="number">
-    <button onclick="addPagamento()">Adicionar</button>
+    <ul id="listaGasto"></ul>
   </div>
 </section>
+
 
 <section id="financeiro" class="sec" style="display:none;">
   <h2>📊 Controle Financeiro</h2>
